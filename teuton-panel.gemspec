@@ -47,5 +47,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.2.8"
   spec.add_runtime_dependency "thor", "~> 1.5"
   spec.add_runtime_dependency "tty-prompt", "~> 0.23"
+  spec.add_runtime_dependency "sinatra", "~> 4.2"
+  spec.add_runtime_dependency "rackup", "~> 2.3"
+  spec.add_runtime_dependency "puma", "~> 8.0"
 end
 

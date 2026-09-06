@@ -14,14 +14,14 @@ class CLI < Thor
     Teuton.create(projectpath)
   end
 
-  map ["--run", "run"] => "runin"
-  desc "[run] [DIRECTORY]", "Run Teuton Panel from directory"
+  map ["--up", "-u", "u"] => "up"
+  desc "[up] [DIRECTORY]", "Run Teuton Panel from directory"
   long_desc <<-LONGDESC
   This function runs panel in the specified directory.
-  By default, the current directory is used.
+  By default, the current directory will be used.
   LONGDESC
-  def runin(dirpath = ".")
-    Teuton::Panel.run(dirpath)
+  def up(dirpath = ".")
+    Teuton::Panel.up(dirpath)
   end
 
   map ["v", "-v", "--version"] => "version"
@@ -35,7 +35,7 @@ class CLI < Thor
   # * teuton-panel dir/foo
   # * teuton-panel run dir/foo
   def method_missing(method, *_args, &_block)
-    runin(method.to_s)
+    up(method.to_s)
   end
 
   def respond_to_missing?(method_name, include_private = false)
