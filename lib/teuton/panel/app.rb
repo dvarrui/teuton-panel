@@ -22,8 +22,5 @@ module Teuton::Panel
       output += "<pre>#{config.data}</pre>"
       output
     end
-  
-    # Iniciar el servidor si este archivo se ejecuta directamente
-    # run! if app_file == $0
   end  
 end

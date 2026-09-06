@@ -25,3 +25,7 @@ $ teuton-panel
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/dvarrui/teuton-panel.
+
+## Contact
+
+Email: `teuton.software@protonmail.com`
