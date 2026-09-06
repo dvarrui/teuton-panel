@@ -19,6 +19,12 @@ module Teuton::Panel
         dirpath = File.dirname(_1)
         projects << Project.new(dirpath)
       end
+
+      if projects.size.zero?
+        puts "No projects were found in the directory! (#{basedir})"
+        exit 1
+      end
+
       projects  
     end
   end
