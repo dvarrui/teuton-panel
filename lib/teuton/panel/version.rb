@@ -2,7 +2,8 @@
 
 module Teuton
   module Panel
-    APPNAME = "teuton-panel"
     VERSION = "0.1.0"
+    APPNAME = "teuton-panel"
+    CONFIGFILE = "teuton-panel.yaml"
   end
 end

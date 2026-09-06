@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "panel/config"
 require_relative "panel/project"
 require_relative "panel/version"
 
@@ -14,7 +15,8 @@ module Teuton
         puts "No projects were found in the directory! (#{basedir})"
         exit 1
       end
-      projects.each { puts _1 }
+
+      _config = Config.new(basedir)
     end
   end
 end
