@@ -1,11 +1,16 @@
-require "yaml"
+require "fileutils"
 require "tty-prompt"
+require "yaml"
 
 module Teuton::Panel
   class Config
     def initialize(basedir)
       @basedir = basedir
-      load
+      @data = load
+    end
+
+    def [](key)
+      @data[key]
     end
 
     private
@@ -16,11 +21,20 @@ module Teuton::Panel
       unless File.exist?(filepath)
         prompt = TTY::Prompt.new
         action = prompt.yes?("Create configuration file?")
-        puts action
-        exit 1
+        if action
+          create filepath
+        else
+          puts "Bye!"
+          exit 1
+        end
       end
-      data = YAML.load(File.read(filepath))
-      pp data
+      YAML.load(File.read(filepath))
+    end
+
+    def create(target)
+      source = File.join(__dir__, "files", CONFIGFILE)
+      FileUtils.cp(source, target)
+      puts "Configuration file created."
     end
   end
 end

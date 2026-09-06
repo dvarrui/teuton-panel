@@ -1,0 +1,4 @@
+:run:
+  :every: 300
+  :times: 1
+  :delay: 3
