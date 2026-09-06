@@ -15,7 +15,7 @@ module Teuton::Panel
 
       unless File.exist?(filepath)
         prompt = TTY::Prompt.new
-        action = prompt.yes?("Create the configuration file?")
+        action = prompt.yes?("Create configuration file?")
         puts action
         exit 1
       end
