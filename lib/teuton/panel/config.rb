@@ -4,6 +4,8 @@ require "yaml"
 
 module Teuton::Panel
   class Config
+    attr_reader :data
+
     def initialize(basedir)
       @basedir = basedir
       @data = load

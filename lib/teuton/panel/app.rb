@@ -9,7 +9,18 @@ module Teuton::Panel
     set :public_folder, File.dirname(__FILE__) + '/public'
   
     get '/' do
-      '¡Aplicación Sinatra funcionando dentro de una clase!'
+      projects = settings.panel_projects
+      config = settings.panel_config
+      
+      output = "<h1>Proyectos de Teuton Panel</h1>"
+      output += "<ul>"
+      projects.each do |project|
+        output += "<li>#{project}</li>" 
+      end      
+      output += "</ul>"
+
+      output += "<pre>#{config.data}</pre>"
+      output
     end
   
     # Iniciar el servidor si este archivo se ejecuta directamente

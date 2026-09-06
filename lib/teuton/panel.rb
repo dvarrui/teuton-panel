@@ -9,6 +9,9 @@ module Teuton::Panel
   def self.up(basedir)
     projects = Projects::all(basedir)
     config = Config.new(basedir)
+
+    App.set(:panel_projects, projects)
+    App.set(:panel_config, config)
     App.run!
   end
 end
